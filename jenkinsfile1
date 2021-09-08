@@ -1,13 +1,13 @@
-pipeline{
-      
+pipeline
+{
         agent any
         stages
         {
-         stages('scm checkout')
-        {steps{git branch'main',url:'https://github.com/vinita0503/DevOps-Batch.git'}
+         stage('scm checkout')
+        {steps{git branch:'main',url:'https://github.com/vinita0503/DevOps-Batch.git'}}
 
 stage('build the code')
-{steps{withMaven(jdk: 'JAVA HOME',maven: 'MAVEN HOME')
+{steps {withMaven(jdk: 'JAVA HOME',maven: 'MAVEN HOME')
 {sh'mvn package'}
 
 }}
