@@ -13,7 +13,7 @@ stage('build the code')
 stage ('deploy to dev') {
       steps{
            sshagent([deploy-user]){
-           sh" sco -ostrictHostKeyChecking=no */target/*.war ec2-user@18.188.53.201:/opt/tomcat/webapps"
+           sh" scp -ostrictHostKeyChecking=no */target/*.war ec2-user@18.188.53.201:/opt/tomcat/webapps"
 
 
 }}}
