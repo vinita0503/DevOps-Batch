@@ -11,8 +11,8 @@ stage('build the code')
 { sh 'mvn clean package' }
 }}
 stage ('deploy to dev') {
-      steps{
-           sshagent(['deploy-user']){
+      steps {
+           sshagent(['deploy-user']) {
            sh "scp -o StrictHostKeyChecking=no */target/*.war ec2-user@18.188.53.201:/opt/tomcat/webapps"
 
 
